@@ -1,0 +1,439 @@
+body {
+  background: url(../img/bg2.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+nav {
+  width: 100%;
+  height: 70px;
+  background: url(../img/bg1.jpg);
+  box-shadow: 0px 3px 4px black;
+}
+
+.music-setting {
+  width: 200px;
+  height: 70px;
+  position: relative;
+}
+
+.music-setting input {
+  position: absolute;
+  bottom: 5px;
+}
+
+nav img {
+  width: 45px;
+  border: 3px solid white;
+  border-radius: 50%;
+  background-color: black;
+  box-shadow: 1px 2px 5px black;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+nav img:hover {
+  cursor: pointer;
+  transform: translateY(-5px);
+  box-shadow: 1px 5px 5px black;
+}
+
+.music-setting h1 {
+  font-size: 30px;
+  font-weight: bold;
+  position: absolute;
+  right: 30px;
+  top: 10px;
+  color: white;
+  text-shadow: 0px 3px 3px black;
+}
+
+/* content */
+
+.container {
+  width: 600px;
+  height: 500px;
+  margin: 70px auto;
+  background: url(../img/bg1.jpg);
+  background-size: cover;
+  border-radius: 30px;
+  border: 5px solid burlywood;
+  box-shadow: 0px 5px 5px black;
+  font-family: 'Original Surfer', cursive;
+}
+
+.container .title-top {
+  text-align: center;
+  font-size: 80px;
+  font-weight: bold;
+  margin: -60px auto 0px;
+  background: url(../img/bg3.jpg);
+  border: 5px solid burlywood;
+  border-radius: 50%;
+  width: 250px;
+  color: white;
+  padding: 10px;
+}
+
+.title-top .title-satu {
+  display: inline-block;
+  transform: rotate(-25deg);
+}
+.title-top .title-tiga {
+  display: inline-block;
+  transform: rotate(25deg);
+}
+.title-top span {
+  margin-left: 10px;
+}
+
+/* halaman awal */
+
+.awal {
+  font-size: 85px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.awal .awal-title-1 {
+  color: black;
+  text-shadow: 0px 2px 3px whitesmoke;
+  letter-spacing: -10px;
+  display: inline-block;
+  transform: translateY(-30px);
+}
+.awal .awal-title-2 {
+  color: black;
+  text-shadow: 0px 2px 3px whitesmoke;
+  letter-spacing: 15px;
+  display: inline-block;
+  transform: translateY(30px);
+}
+
+.awal h1 {
+  font-size: 40px;
+  margin-top: 80px;
+  font-weight: bold;
+}
+
+.awal i {
+  margin-top: 20px;
+  cursor: pointer;
+  color: white;
+  text-shadow: 0px 5px 5px black;
+}
+
+.awal i:hover {
+  transform: scale(1.3);
+}
+
+/* halaman pilih level */
+.pilih-level {
+  text-align: center;
+  display: none;
+}
+
+.pilih-level h1 {
+  font-size: 75px;
+  color: white;
+  text-shadow: 0 3px 5px black;
+  margin-top: 20px;
+}
+
+.pilih-level button {
+  font-size: 50px;
+  padding: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 80px 10px 0px 10px;
+  border-radius: 30px;
+  overflow: hidden;
+  border: 3px solid white;
+  box-shadow: 0px 3px 2px black;
+  background-color: rgb(80, 53, 19);
+  color: white;
+  outline: none;
+}
+
+.pilih-level button:hover,
+.pilih-kesulitan button:hover {
+  cursor: pointer;
+  background-color: rgb(112, 80, 41);
+  transform: scale(1.1) translateY(-10px);
+  box-shadow: 0px 13px 12px black;
+}
+
+/* halaman pilih kesulitan */
+.pilih-kesulitan {
+  display: none;
+  text-align: center;
+  font-size: 50px;
+  color: white;
+  text-shadow: 0 3px 5px black;
+  margin-top: 20px;
+  position: relative;
+}
+.pilih-kesulitan h1 {
+  margin-top: 50px;
+}
+.pilih-kesulitan button {
+  font-size: 40px;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 80px 5px 0px 5px;
+  border-radius: 30px;
+  box-shadow: 0px 3px 2px black;
+  background-color: rgb(80, 53, 19);
+  outline: none;
+}
+
+.pilih-kesulitan #easy {
+  color: rgb(106, 255, 106);
+  border: 3px solid rgb(0, 207, 0);
+}
+.pilih-kesulitan #normal {
+  color: rgb(112, 179, 255);
+  border: 3px solid rgb(4, 103, 216);
+}
+.pilih-kesulitan #hard {
+  color: rgb(253, 78, 78);
+  border: 3px solid rgb(216, 37, 37);
+}
+
+.pilih-kesulitan h3 {
+  text-shadow: none;
+  border: 3px solid white;
+  width: 60px;
+  border-radius: 50%;
+  box-shadow: 0px 3px 5px black;
+  position: absolute;
+  top: -85px;
+  left: 10px;
+}
+.pilih-kesulitan h3:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+/* overlay detail kesulitan */
+.overlay {
+  display: none;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999999;
+  transition: 0.5s;
+}
+.overlay:target {
+  display: block;
+  height: auto;
+  width: auto;
+  left: 0;
+  bottom: 0;
+}
+
+.isi-detail,
+.isi-hasil,
+.isi-jawaban {
+  background: url(../img/bg1.jpg);
+  border-radius: 30px;
+  width: 400px;
+  height: 350px;
+  margin: 200px auto;
+  border: 5px solid burlywood;
+  position: relative;
+}
+.isi-detail h1 {
+  margin-top: 0px;
+}
+.isi-detail p {
+  margin-top: 0px;
+  font-size: 30px;
+}
+.isi-detail span {
+  color: burlywood;
+  position: absolute;
+  right: -30px;
+  top: -25px;
+  background: url(../img/bg3.jpg);
+  border-radius: 50%;
+  padding: 5px;
+  border: 3px solid burlywood;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 40px;
+  text-shadow: 0 3px 5px rgba(0, 0, 0, 0);
+  box-shadow: 0px 3px 3px black;
+}
+
+.isi-detail span:hover {
+  box-shadow: 0px 1px 5px black;
+  display: inline-block;
+  transform: scale(1.1);
+}
+.isi-detail .mulai-main {
+  margin-top: 40px;
+  color: white;
+  border: 3px solid burlywood;
+}
+.isi-detail .mulai-main:hover {
+  transform: scale(1);
+  box-shadow: none;
+}
+
+/* tempat jawab */
+.tempat-jawab {
+  display: none;
+  position: relative;
+  text-align: center;
+  margin-top: 20px;
+}
+.tempat-jawab h1,
+.tempat-jawab h2,
+.tempat-jawab h3 {
+  font-size: 40px;
+  color: white;
+  text-shadow: 0 3px 3px black;
+  padding: 5px;
+}
+.tempat-jawab input {
+  margin-top: 50px;
+  font-family: 'Original Surfer', cursive;
+  height: 40px;
+  width: 150px;
+  border: none;
+  border-bottom: 2px solid white;
+  background: none;
+  outline: none;
+  color: white;
+  text-align: center;
+  font-size: 25px;
+  text-shadow: 0 3px 3px black;
+  box-shadow: 0 2px 0px rgba(0, 0, 0, 0.5);
+}
+.tempat-jawab label {
+  position: absolute;
+  color: rgb(223, 223, 223);
+  left: 240px;
+  font-size: 30px;
+  bottom: 5px;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+.tempat-jawab input:focus ~ label,
+.tempat-jawab input:valid ~ label {
+  transform: translateY(-35px);
+  color: white;
+  text-shadow: 0 3px 3px black;
+}
+.tempat-jawab p {
+  text-align: center;
+}
+.tempat-jawab img {
+  width: 30px;
+  height: 30px;
+}
+.tempat-jawab .btn-tebak {
+  position: absolute;
+  bottom: -80px;
+  left: 175px;
+  outline: none;
+  border-radius: 10px;
+  border: 3px solid white;
+  font-size: 30px;
+  width: 250px;
+  background-color: rgb(0, 97, 0);
+  background: url(../img/bg3.jpg);
+  color: white;
+  box-shadow: 0px 3px 3px black;
+  letter-spacing: 5px;
+}
+.tempat-jawab .btn-tebak:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.tempat-jawab h2 img {
+  transform: scale(1.5);
+  position: absolute;
+  margin-left: 20px;
+}
+.tempat-jawab h2 img:hover {
+  transform: scale(2);
+}
+
+.tempat-jawab .overlay p {
+  color: white;
+  text-shadow: 0 3px 3px black;
+  margin-top: 30px;
+  font-size: 40px;
+}
+
+.tempat-jawab .isi-detail {
+  height: 230px;
+}
+
+.btn-tebak a {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  width: 100%;
+}
+
+.isi-hasil {
+  height: 250px;
+}
+.isi-jawaban {
+  height: 230px;
+}
+.isi-hasil button {
+  margin-top: 30px;
+  width: 200px;
+  border-radius: 10px;
+  border: 3px solid white;
+  background: url(../img/bg3.jpg);
+}
+.isi-hasil a {
+  font-size: 30px;
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  width: 100%;
+}
+
+.overlay i {
+  margin-top: 15px;
+  color: white;
+  font-size: 40px;
+  background: url(../img/bg3.jpg);
+  padding: 15px;
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: 0px 3px 3px black;
+}
+
+.overlay i:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+#ulang {
+  color: white;
+  border: 3px solid white;
+  padding: 15px;
+  border-radius: 50%;
+  box-shadow: 0px 3px 5px black;
+  position: absolute;
+  top: -60px;
+  left: 10px;
+  font-size: 40px;
+}
+
+#ulang:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}

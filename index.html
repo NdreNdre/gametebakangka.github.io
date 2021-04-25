@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Game Tebak Angka</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Original+Surfer&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <nav>
+      <div class="music-setting">
+        <img src="img/play-music.png" alt="play-music" id="icon-music" />
+        <h1>Volume</h1>
+        <audio id="song-bgm" loop>
+          <source src="BGM.mp3" type="audio/mp3" />
+        </audio>
+        <input type="range" id="volume" max="100" min="0" step="1" />
+      </div>
+    </nav>
+
+    <div class="container">
+      <!-- top title -->
+      <div class="title-top">
+        <span class="title-satu">1</span>
+        <span class="title-dua">2</span>
+        <span class="title-tiga">3</span>
+      </div>
+      <!-- content awal -->
+      <div class="awal">
+        <span class="awal-title-1">Tebak</span>
+        <span class="awal-title-2">Angka</span>
+        <h1>MAIN KUY</h1>
+        <i class="fa fa-play" id="play"></i>
+      </div>
+      <!-- content pilih level -->
+      <div class="pilih-level">
+        <h1>PILIH TEBAKAN ANGKA</h1>
+        <button value="1" class="btn-level">1 - 20</button>
+        <button value="2" class="btn-level">1 - 40</button>
+        <button value="3" class="btn-level">1 - 60</button>
+      </div>
+      <!-- content pilih kesulitan -->
+      <div class="pilih-kesulitan">
+        <h1>TINGKAT KESULITAN</h1>
+        <h2></h2>
+        <a href="#detail-kesulitan"><button value="1" class="btn-kesulitan" id="easy">EASY</button></a>
+        <a href="#detail-kesulitan"><button value="2" class="btn-kesulitan" id="normal">NORMAL</button></a>
+        <a href="#detail-kesulitan"><button value="3" class="btn-kesulitan" id="hard">HARD</button></a>
+        <div class="overlay" id="detail-kesulitan">
+          <div class="isi-detail">
+            <h1>Detail</h1>
+            <a href="#"><span id="close-detail">X</span></a>
+            <p></p>
+            <a href="#"><button class="mulai-main">MULAI</button></a>
+          </div>
+        </div>
+        <h3><i class="fa fa-arrow-left" id="kembali"></i></h3>
+      </div>
+      <div class="tempat-jawab">
+        <i class="fa fa-undo" id="ulang"></i>
+        <h1>Nyawa = 3</h1>
+        <h2>Random Clue = 1</h2>
+        <h3>Level = 1 - 20</h3>
+
+        <input type="text" required />
+        <label for="">Tebakan</label>
+        <div class="overlay" id="random-clue">
+          <div class="isi-detail">
+            <h1>Random Clue</h1>
+            <a href="#"><span id="close-clue">X</span></a>
+            <p></p>
+          </div>
+        </div>
+        <button class="btn-tebak"><a href="#hasil-user" class="hasil-tebak">TEBAK</a></button>
+        <div class="overlay" id="hasil-user">
+          <div class="isi-hasil">
+            <h1>ok</h1>
+            <button><a href="#" class="selesai">OKE</a></button>
+          </div>
+        </div>
+        <div class="overlay" id="hasil-jawaban">
+          <div class="isi-jawaban">
+            <h1>ok</h1>
+            <i class="fa fa-undo"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
