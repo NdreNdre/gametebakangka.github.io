@@ -443,6 +443,7 @@ nav img:hover {
 .game-over {
   display: none;
   text-align: center;
+  padding: 5px;
 }
 
 .game-over h1 {
