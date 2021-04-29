@@ -45,14 +45,17 @@ const tebakanUser = contentJawab.querySelector('input');
 const hasilUser = contentJawab.querySelector('.isi-hasil h1');
 const hasilJawaban = contentJawab.querySelector('.isi-jawaban h1');
 const ulang = document.getElementById('ulang');
+const ulang2 = document.getElementById('repeat');
+const contentKelar = document.querySelector('.game-over');
+const tampilJawaban = contentKelar.querySelector('h1');
 
 let maxTebakan = 0;
 let randomAngka = 0;
-let nyawa = 0;
+let nyawa = 5;
 let clue = 0;
 let batasClue = 0;
 let rangeClue = 0;
-let indikasi = 0;
+let tempHelp = 0;
 
 contentAwal.style.display = 'block';
 container.addEventListener('click', function (e) {
@@ -144,6 +147,7 @@ container.addEventListener('click', function (e) {
   // mengambil jawaban user
   if (e.target.className == 'hasil-tebak') {
     if (tebakanUser.value != randomAngka) {
+      salahTebak.play();
       if (tebakanUser.value > maxTebakan || tebakanUser.value < 1) {
         hasilUser.innerHTML = 'SALAH <br><br> Jawaban melewati batas';
         tebakanUser.value = '';
@@ -154,30 +158,40 @@ container.addEventListener('click', function (e) {
         hasilUser.innerHTML = 'SALAH <br><br> Jawaban terlalu besar';
         nyawa--;
       }
-      salahTebak.play();
     } else if (tebakanUser.value == randomAngka) {
       benarTebak.play();
       hasilUser.innerHTML = 'BENAR !!! <br><br> YEYYY JAWABAN ANDA BENARR<br>';
-      indikasi = 1;
+      tempHelp = 1;
     }
-    if (e.target.className == 'selesai' && indikasi == 1) {
-      contentAwal.style.display = 'block';
-      contentJawab.style.display = 'none';
-      maxTebakan = 0;
-      randomAngka = 0;
+    if (nyawa == 0) {
+      hasilUser.innerHTML = 'Kesempatan<br>anda sudah<br>habis !!!';
       nyawa = 0;
-      clue = 0;
-      batasClue = 0;
-      rangeClue = 0;
-      tebakanUser.value = '';
-      clickSound.play();
     }
   }
+
+  if (nyawa < 1) {
+    hasilUser.innerHTML = 'Kesempatan<br>anda sudah<br>habis !!!';
+    nyawa = 0;
+    if (e.target.className == 'selesai') {
+      contentJawab.style.display = 'none';
+      contentKelar.style.display = 'block';
+      jawabanAngka.play();
+    }
+  }
+  if (tempHelp == 1) {
+    if (e.target.className == 'selesai') {
+      contentJawab.style.display = 'none';
+      contentKelar.style.display = 'block';
+      jawabanAngka.play();
+    }
+  }
+
   //   menampilkan nyawa dan random clue
   tampilNyawa.innerHTML = 'Nyawa : ' + nyawa;
   tampilClue.innerHTML = 'Random Clue : ' + clue + '<a href="#random-clue"><img src="img/lightbulb1.png" class="clue-pop" /></a>';
   tampilLevel.innerHTML = 'Tebakan : 1 - ' + maxTebakan;
-  console.log(randomAngka);
+  tampilJawaban.innerHTML = 'Jawabannya Adalah<br><br>' + randomAngka + ' !!!!';
+  console.log('Nih jawabannya : ' + randomAngka);
 });
 
 ulang.addEventListener('click', function () {
@@ -192,6 +206,22 @@ ulang.addEventListener('click', function () {
   tebakanUser.value = '';
   clickSound.play();
 });
+ulang2.addEventListener('click', function () {
+  contentAwal.style.display = 'block';
+  contentKelar.style.display = 'none';
+  maxTebakan = 0;
+  randomAngka = 0;
+  nyawa = 0;
+  clue = 0;
+  batasClue = 0;
+  rangeClue = 0;
+  tebakanUser.value = '';
+  clickSound.play();
+});
+
+// selesai.addEventListener('click', function () {
+//
+// });
 
 // fungsi angka only di inputan
 const angkaOnly = document.querySelector('.tempat-jawab input');
