@@ -216,6 +216,7 @@ ulang2.addEventListener('click', function () {
   batasClue = 0;
   rangeClue = 0;
   tebakanUser.value = '';
+  tempHelp = 0;
   clickSound.play();
 });
 
